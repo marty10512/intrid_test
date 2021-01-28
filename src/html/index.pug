@@ -1,0 +1,15 @@
+doctype html
+html(lang="ru")
+    head
+        include mixin/meta
+        title INDEX
+        include mixin/styles
+    body.index
+        include mixin/mixin
+        include header/header
+        main
+            .wrapper
+                include index/index
+        include footer/footer
+        include mixin/modals
+        include mixin/scripts
