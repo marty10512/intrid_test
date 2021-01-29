@@ -1,3 +1,152 @@
-header{
+.header{
+  display: flex;
+  flex-direction: column;
 
+  &__row{
+    .wrapper{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &:first-child{
+      margin-bottom: 9px;
+    }
+
+    &--first{
+      padding: 18px 0;
+      height: 72px;
+    }
+    &--second{
+      height: 56px;
+      background-color: $color_Azure;
+    }
+  }
+
+  &__logo{
+
+  }
+
+  &__desc{
+    font-size: 11px;
+    line-height: 17px;
+    letter-spacing: .1em;
+    margin: auto 0;
+  }
+
+  &__create{
+    font-size: 9px;
+    line-height: 14px;
+    padding: 11px 21px;
+  }
+
+  &__item{
+    display: flex;
+    &:before{
+      margin: auto 17px auto 0;
+    }
+
+    &-content{
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-top{
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      font-family: $font_1;
+      font-style: normal;
+      letter-spacing: .1em;
+    }
+    &-bottom{
+      font-family: $font_1;
+      font-style: normal;
+      text-decoration: none;
+      letter-spacing: .1em;
+      font-size: 11px;
+      line-height: 17px;
+
+    }
+
+    &--wallet{
+      .header__item-bottom{
+        text-decoration: underline;
+      }
+    }
+
+    &--mail{
+      .header__item-bottom{
+        align-self: end;
+      }
+    }
+  }
+
+  &__navlink{
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    padding: 0 18px;
+
+    &-item{
+      display: flex;
+      height: 56px;
+      align-items: center;
+    }
+    &-name{
+      text-transform: uppercase;
+      color: white;
+      margin-right: 7px;
+      transition: color .3s;
+      height: min-content;
+      white-space: nowrap;
+    }
+    &-arrow{
+      color: white;
+      transition: .3s;
+      height: min-content;
+    }
+
+    &-submenu{
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s;
+      position: absolute;
+      top: 100%;
+      left: 1px;
+      background-color: white;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+      &-content{
+        padding: 8px 0;
+        z-index: 9;
+      }
+      &-item{
+        padding: 8px 8px 8px 16px;
+        white-space: nowrap;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        border-bottom: 1px solid #E4E4E4;
+        transition: color .3s;
+        &:hover{
+          color: $color_Azure;
+        }
+        &:last-child{
+          border-bottom: 0 none;
+        }
+      }
+    }
+
+    &:hover{
+      background-color: white;
+      .header__navlink{
+        &-name,
+        &-arrow{
+          color: $color_Azure;
+        }
+        &-submenu{
+          max-height: 500px;
+        }
+      }
+    }
+  }
 }

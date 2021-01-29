@@ -1,2 +1,32 @@
-mixin button(custom_class, text, icon, tab_type)
-    .button
+mixin logo(custom_class, text)
+    .logo(class= custom_class)
+        .logo__left ПИР
+        if(text)
+            .logo__right
+                p.logo__right-row
+                    span.logo__right-capital П
+                    span ровайдер
+                p.logo__right-row
+                    span.logo__right-capital И
+                    span нтерактивных
+                p.logo__right-row
+                    span.logo__right-capital Р
+                    span ешений
+        a.logo__link(href='/')
+
+
+mixin button(custom_class, text, icon, tab, submit)
+    if (!submit)
+        .button(
+            class= custom_class,
+            class= icon,
+            tab= tab ? 'button--tab' : ''
+            )= text
+    else
+        button.button(
+            class= custom_class,
+            class= icon,
+            tab= tab ? 'button--tab' : '',
+            type='submit'
+        )= text
+

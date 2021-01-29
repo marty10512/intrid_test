@@ -1,7 +1,8 @@
 //variables
 
-$color_Black_34: #343434;
+$color_Black: #343434;
 $color_Azure: #305BAF;
+$color_Lynch: #64769A;
 $color_DustyGray: #9A9A9A;
 
 
@@ -41,6 +42,7 @@ body{
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  color: black;
 }
 
 main{
@@ -48,12 +50,9 @@ main{
 }
 
 .wrapper{
-  width: Min(100vw, 1440px);
-  padding: 0 40px;
+  width: Min(100vw, 1182px);
+  padding: 0 10px;
   margin: 0 auto;
-  @include tablet {
-    padding: 0 10px;
-  }
 }
 
 input[type=text],
@@ -95,14 +94,16 @@ h1,h2,h3,h4,h5,h6,p,a{
   margin: 0;
 }
 
-::-webkit-scrollbar{
-  width: 4px;
-  height: 4px;
-
+a{
+  text-decoration: none;
+  color: black;
 }
-::-webkit-scrollbar-thumb{
-  background-color: $color_Black;
-  border-radius: 5px;
+
+.link{
+  transition: color .3s;
+  &:hover{
+    color: $color_Azure;
+  }
 }
 
 

@@ -1,4 +1,46 @@
+- var user = {mail:'gajarin@mail.ru', balance: '132, 96'}
+// menu variables
+- var profile = {name: 'профиль', submenu: ['Фккаунт', 'Настройки', 'Подписка на уведомления', 'Новости']}
+- var mailing = {name: 'рассылка', submenu: ['Sms', 'Viber', 'Vk', 'Каскадная']}
+- var statistics = {name:'Статистика', submenu:['Статистика']}
+- var finance = {name: 'финансы', submenu: [' ваши финансы']}
+- var developers = {name: 'разработчикам', submenu: ['Вакансии']}
+- var knowledgeBase = {name: 'база знаний', submenu: ['Wiki', 'О нас']}
+- var headerNavLinks = [profile, mailing, statistics, finance, developers, knowledgeBase]
+
+mixin navLink(data)
+    .header__navlink
+        .header__navlink-item
+            .header__navlink-name= data.name
+            .header__navlink-arrow.icon-arrow
+        .header__navlink-submenu
+            .header__navlink-submenu-content
+                each item in data.submenu
+                    .header__navlink-submenu-item= item
 
 header
-    .wrapper
-        .header
+    .header
+        .header__row.header__row--first
+            .wrapper
+                +logo('header__logo', 'header-logo', true)
+                .header__desc
+                    p Инструмент управления
+                    p СМС - рассылками
+                +button('header__create', 'создать рассылку')
+                .header__item.header__item--phone.icon-phone
+                    .header__item-content
+                        a.header__item-top.link(href='tel:88001004603') 8 800 100-46-03
+                        .header__item-bottom Звонок бесплатный
+                .header__item.header__item--wallet.icon-wallet
+                    .header__item-content
+                        .header__item-top= 'Баланс '+user.balance+' ₽'
+                        a.header__item-bottom.link(href='#') Пополнить счет
+                .header__item.header__item--mail.icon-user
+                    .header__item-content
+                        .header__item-top= user.mail
+                        a.header__item-bottom.link(href='#') Выйти
+        nav.header__row.header__row--second
+            .wrapper
+                each nav in headerNavLinks
+                    +navLink(nav)
+
