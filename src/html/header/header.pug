@@ -38,9 +38,31 @@ header
                 .header__item.header__item--mail.icon-user
                     .header__item-content
                         .header__item-top= user.mail
-                        a.header__item-bottom.link(href='#') Выйти
-        nav.header__row.header__row--second
+                        a.header__item-bottom.link(href='#')= user ? 'Выйти' : 'Войти'
+        .header__row.header__row--second
             .wrapper
-                each nav in headerNavLinks
-                    +navLink(nav)
-
+                .header__responsive
+                    .header__burger
+                        .header__burger-item
+                        .header__burger-item
+                        .header__burger-item
+                    a.header__item.header__item--create(href='#')
+                    .header__item.header__item--wallet.icon-wallet
+                        .header__item-content
+                            .header__item-top
+                                div Баланс
+                                div= user.balance + ' ₽'
+                            a(href='#', hidden)
+                    a.header__item.header__item--phone.icon-phone(href='tel:88001004603')
+                .header__row-content
+                    .header__row-content-close.icon-cross
+                    nav.header__navigation
+                        each nav in headerNavLinks
+                            +navLink(nav)
+                    .header__row-content-responsive
+                        label.header__item.header__item--phone.icon-phone
+                            .header__item-content
+                                .header__item-top 8 800 100-46-03
+                                .header__item-bottom Звонок бесплатный
+                            a(href='tel:88001004603', hidden)
+                        .header__row-content-action= user ? 'Выйти' : 'Войти'

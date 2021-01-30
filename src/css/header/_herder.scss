@@ -3,22 +3,87 @@
   flex-direction: column;
 
   &__row{
+    position: relative;
     .wrapper{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
-    &:first-child{
-      margin-bottom: 9px;
-    }
 
     &--first{
       padding: 18px 0;
       height: 72px;
+      margin-bottom: 9px;
+      @include responsive {
+        margin-bottom: 0;
+        .header__item{
+          display: none;
+        }
+      }
     }
     &--second{
       height: 56px;
       background-color: $color_Azure;
+      @include responsive {
+        order: -1;
+        display: flex;
+      }
+    }
+
+    &-content{
+      display: flex;
+      flex-direction: column;
+      &-close{
+        display: none;
+      }
+      &-responsive{
+        display: none;
+      }
+      
+      @include responsive {
+        position: fixed;
+        left: -100%;
+        z-index: 99;
+        background-color: $color_Azure;
+        width: 97vw;
+        height: 100vh;
+        padding: 21px 21px 30px 35px;
+        transition: left .6s;
+        &.active{
+          left: 0;
+        }
+
+        &-close{
+          display: flex;
+          margin-left: auto;
+          height: 42px;
+          width: 42px;
+          min-height: 42px;
+          background-color: white;
+          border-radius: 50%;
+          cursor: pointer;
+          margin-bottom: 7px;
+          &:before{
+            font-size: 22px;
+            margin: auto;
+          }
+        }
+
+        &-responsive{
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        &-action{
+          margin: auto auto 0;
+          cursor: pointer;
+          color: white;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: .1em;
+        }
+      }
     }
   }
 
@@ -31,6 +96,9 @@
     line-height: 17px;
     letter-spacing: .1em;
     margin: auto 0;
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   &__create{
@@ -42,12 +110,20 @@
   &__item{
     display: flex;
     &:before{
+      height: 32px;
+      width: 32px;
+      line-height: 32px;
       margin: auto 17px auto 0;
+      font-size: 14px;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
     }
 
     &-content{
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
 
     &-top{
@@ -65,7 +141,6 @@
       letter-spacing: .1em;
       font-size: 11px;
       line-height: 17px;
-
     }
 
     &--wallet{
@@ -73,10 +148,69 @@
         text-decoration: underline;
       }
     }
-
     &--mail{
       .header__item-bottom{
         align-self: end;
+      }
+    }
+
+
+    @include responsive {
+      color: white;
+      cursor: pointer;
+      &:before{
+        height: 42px;
+        width: 42px;
+        line-height: 42px;
+        font-size: 22px;
+        color: black;
+      }
+      &--create{
+        position: relative;
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        background-color: white;
+        margin: auto 27px auto 0;
+        &:after,
+        &:before{
+          position: absolute;
+          content: '';
+          background-color: $color_Azure;
+          height: 2px;
+          width: 22px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 0;
+        }
+        &:before{
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+      &--wallet{
+        margin-right: 27px;
+      }
+    }
+  }
+
+  &__navigation{
+    display: flex;
+    justify-content: space-between;
+
+    @include responsive {
+      flex-direction: column;
+      padding-bottom: 35px;
+      position: relative;
+      margin-bottom: 28px;
+      &:after{
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        bottom: 0;
+        left: 0;
       }
     }
   }
@@ -114,7 +248,7 @@
       top: 100%;
       left: 1px;
       background-color: white;
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       &-content{
         padding: 8px 0;
         z-index: 9;
@@ -134,6 +268,11 @@
           border-bottom: 0 none;
         }
       }
+
+      @include responsive {
+        position: unset;
+        width: 100%;
+      }
     }
 
     &:hover{
@@ -143,8 +282,70 @@
         &-arrow{
           color: $color_Azure;
         }
+      }
+      @include responsive {
+        background-color: $color_Azure;
+        .header__navlink{
+          &-name{
+            color: white;
+          }
+          &-arrow{
+            color: white;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    &.active{
+      background-color: white;
+      .header__navlink{
+        &-name{
+          color: $color_Azure;
+        }
+        &-arrow{
+          transform: rotate(180deg);
+          color: $color_Azure;
+        }
         &-submenu{
           max-height: 500px;
+        }
+      }
+      @include responsive {
+        background-color: $color_Azure;
+        .header__navlink{
+          &-name{
+            color: white;
+          }
+          &-arrow{
+            color: white;
+            transform: rotate(180deg);
+          }
+          &-submenu{
+            max-height: 500px;
+          }
+        }
+      }
+    }
+  }
+
+  &__responsive{
+    display: none;
+    @include responsive {
+      display: flex;
+      width: 100%;
+      .header{
+        &__burger{
+          margin: auto auto auto 0;
+          cursor: pointer;
+          &-item{
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            background-color: white;
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
         }
       }
     }

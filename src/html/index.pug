@@ -3,6 +3,8 @@ html(lang="ru")
     head
         include mixin/meta
         title INDEX
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
         include mixin/styles
     body.index
         include mixin/mixin
@@ -10,6 +12,8 @@ html(lang="ru")
         main
             .wrapper
                 include index/index
-        include footer/footer
-        include mixin/modals
         include mixin/scripts
+    script(src="https://unpkg.com/swiper/swiper-bundle.js" defer)
+    script(src="https://unpkg.com/swiper/swiper-bundle.min.js" defer)
+    script(src="js/index.min.js" defer)
+

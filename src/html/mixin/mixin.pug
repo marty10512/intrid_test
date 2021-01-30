@@ -20,13 +20,23 @@ mixin button(custom_class, text, icon, tab, submit)
         .button(
             class= custom_class,
             class= icon,
-            tab= tab ? 'button--tab' : ''
+            class= tab ? 'button--tab' : ''
             )= text
     else
         button.button(
             class= custom_class,
             class= icon,
-            tab= tab ? 'button--tab' : '',
+            class= tab ? 'button--tab' : '',
             type='submit'
         )= text
 
+mixin tooltip(custom_class, text)
+    .tooltip.icon-help
+        .tooltip__text= text
+
+mixin checkbox(custom_class, text, name, tooltip)
+    label.checkbox(class= custom_class)
+        input(type='checkbox', name= name, hidden)
+        .checkbox__item.icon-check-empty= text
+        if (tooltip)
+            +tooltip('checkbox__tooltip', tooltip)

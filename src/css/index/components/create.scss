@@ -1,0 +1,30 @@
+&__create{
+  .create{
+    &__tabs{
+      display: flex;
+      &-item{
+        width: min-content;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 9px;
+        line-height: 14px;
+        letter-spacing: 0.1em;
+        font-family: $font_1;
+        &:before{
+          margin-right: 8px;
+        }
+      }
+    }
+
+
+    &__item{
+      display: none;
+      &.active{
+        display: flex;
+      }
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 0px 7px 7px 7px;
+      padding: 42px 17px 20px 29px;
+    }
+  }
+}

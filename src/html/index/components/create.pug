@@ -1,0 +1,40 @@
+- var createTabsList = [{name:'SMS рассылка', icon:'icon-message'}, {name:'Viber рассылка', icon:'icon-viber'}, {name:'VK рассылка', icon: 'icon-vk'}, {name: 'Каскадная рассылка', icon: 'icon-cascade'}]
+- var sendersList = ['Выберете отправителя','Вася', 'Петя', 'Митя']
+- var templatesList = ['Выберете шаблон','Нормальный', 'Косой', 'Кривой']
+- var dropdownItems = ['номер телефона', 'фамилия', 'имя', 'отчество', 'дата рождения', 'пол', 'примечание1', 'примечание2', 'примечание3', 'окончания -ый/ая']
+
+
+.index__create
+    .create
+        .create__tabs
+            each tab, i in createTabsList
+                - var newClass = i === 0 ? 'create__tabs-item js-create-tab active' : 'create__tabs-item js-create-tab'
+                +button(newClass, tab.name, tab.icon, true)
+        each item, i in createTabsList
+            form.create__item(class= i === 0 ? 'active' : '')
+                .create__item-data
+                    .create__item-row
+                        .create__item-title= item.name
+                        input.create__item-name(name='name', placeholder='введите имя рассылки')
+                    .create__item-row
+                        select.create__item-select(name='sender')
+                            each sender, i in sendersList
+                                option(disabled= i === 0, selected= i===0)= sender
+                        .create__item-link Добавить отправителя
+                    .create__item-row
+                        select.create__item-select(name='template')
+                            each template, i in templatesList
+                                option(disabled= i === 0, selected= i===0)= template
+                        .create__item-link Добавить шаблон
+                    .create__item-row
+                        .create__item-dropdown
+                            +button('create__item-dropdown-btn', 'Персонализация', '', true)
+                            ul.create__item-dropdown-list
+                                each item in dropdownItems
+                                    li.create__item-dropdown-item= item
+                        textarea.create__item-textarea(placeholder='введите текст сообщения')
+                        .create__item-info
+                            .create__item-info-symbols Введено <span>220</span> символов
+                            .create__itemv-quantity Итого: <span>2</span> sms
+                            +button('create__item-info-btn', 'сохранить как шаблон')
+                    .create__item-row

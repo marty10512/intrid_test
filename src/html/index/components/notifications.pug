@@ -1,0 +1,23 @@
+- var sliderItemData = {title: 'Изменения тарификации', text: 'Уведомление! Изменения в условиях тарификации на операторе МТС с 1 декабря 2020 года.', date: '01.12.2020'}
+- var sliderData = [sliderItemData, sliderItemData, sliderItemData, sliderItemData]
+
+mixin infoSliderItem(data)
+    .slider-item
+        .slider-item__title= data.title
+        .slider-item__desc= data.text
+        .slider-item__bottom
+            .slider-item__date= data.date
+            a.slider-item__link.icon-arrow-right(href="#") Подробнее →
+
+.index__notofications.swiper-container
+    .index__notofications-wrapper.swiper-wrapper
+        each item in sliderData
+            .index__notofications-item.swiper-slide
+                .index__notofications-title= item.title
+                .index__notofications-text= item.text
+                .index__notofications-footer
+                    .index__notofications-date= item.date
+                    a.index__notofications-more.icon-arrow-right(href='#') Подробнее
+    .index__notofications-pagination.swiper-pagination
+    .index__notofications-arrow.index__notofications-arrow--prev.icon-arrow
+    .index__notofications-arrow.index__notofications-arrow--next.icon-arrow
