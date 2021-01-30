@@ -5,6 +5,7 @@ html(lang="ru")
         title INDEX
         link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css")
         link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css")
         include mixin/styles
     body.index
         include mixin/mixin
@@ -13,6 +14,7 @@ html(lang="ru")
             .wrapper
                 include index/index
         include mixin/scripts
+    script(src="https://cdn.jsdelivr.net/npm/flatpickr")
     script(src="https://unpkg.com/swiper/swiper-bundle.js" defer)
     script(src="https://unpkg.com/swiper/swiper-bundle.min.js" defer)
     script(src="js/index.min.js" defer)

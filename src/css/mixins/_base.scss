@@ -77,7 +77,9 @@ select{
     font-family: $font_1;
   }
   &[disabled]{
-    background-color: #aaa;
+    background-color: #eee;
+    border-color: #C6C6C6;
+    color: #BCBCBC;
   }
   &:focus{
     outline: none;
@@ -111,6 +113,12 @@ a{
   &:hover{
     color: $color_Azure;
   }
+}
+
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 

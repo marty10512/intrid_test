@@ -34,9 +34,10 @@ mixin tooltip(custom_class, text)
     .tooltip.icon-help
         .tooltip__text= text
 
-mixin checkbox(custom_class, text, name, tooltip)
+mixin checkbox(custom_class, text, name, tooltip, id)
     label.checkbox(class= custom_class)
-        input(type='checkbox', name= name, hidden)
-        .checkbox__item.icon-check-empty= text
+        input(type='checkbox', id=id name= name, hidden)
+        .checkbox__item.icon-unchecked= text
         if (tooltip)
             +tooltip('checkbox__tooltip', tooltip)
+

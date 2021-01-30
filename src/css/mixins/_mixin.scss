@@ -63,3 +63,54 @@
     }
   }
 }
+
+.input,
+.textarea{
+  padding: 7px 23px;
+  border: 1px solid #404040;
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.tooltip{
+  cursor: pointer;
+  font-size: 9px;
+  position: relative;
+  height: min-content;
+  color: $color_DustyGray;
+  &__text{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid $color_DustyGray;
+    color: black;
+    display: none;
+    z-index: 9;
+  }
+  &:hover{
+    .tooltip__text{
+      display: block;
+    }
+  }
+}
+
+.checkbox{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  &__item{
+    font-size: 13px;
+    line-height: 19px;
+    font-family: Roboto;
+    &:before{
+      margin-right: 10px;
+    }
+  }
+}
