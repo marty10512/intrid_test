@@ -76,7 +76,7 @@
 
 .tooltip{
   cursor: pointer;
-  font-size: 9px;
+  font-size: 14px;
   position: relative;
   height: min-content;
   color: $color_DustyGray;
@@ -85,7 +85,8 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    max-width: 200px;
+    width: max-content;
     padding: 3px;
     border-radius: 3px;
     background-color: white;

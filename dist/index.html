@@ -252,8 +252,10 @@
                       </div>
                       <textarea class="create__item-textarea textarea" placeholder="введите текст сообщения" name="messsage-textarea"></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                             <div class="button create__item-info-btn">сохранить как шаблон</div>
                       </div>
                     </div>
@@ -267,8 +269,10 @@
                           </label>
                       <textarea class="create__item-textarea create__item-textarea--transcription textarea" placeholder="введите текст сообщения" disabled name="transliteration-textarea" readonly></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -281,16 +285,20 @@
                     </div>
                     <div class="create__item-elem create__item-elem--sixth create__item-elem--column">
                       <div class="create__item-elem create__item-elem--row create__item-elem--margin">
-                        <div class="create__item-text">с</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">с</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                          </div>
                         </div>
-                        <div class="create__item-text">до</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">до</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                          </div>
                         </div>
                       </div>
-                      <div class="create__item-elem create__item-elem--row">
+                      <div class="create__item-elem create__item-elem--row create__item-elem--checkboxes">
                         <div class="create__item-elem create__item-elem--column">
                               <label class="checkbox create__item-checkbox">
                                 <input type="checkbox" name="mailing-setting-1" hidden>
@@ -394,7 +402,7 @@
                     <div class="create__item-data">
                       <div class="create__item-elem create__item-elem--eighth create__item-elem--column">
                         <div class="create__item-elem create__item-elem--row">
-                          <div class="create__item-title">Выбор получателей сообщения</div>
+                          <div class="create__item-title">Базы для исколючения рассылки</div>
                               <div class="tooltip icon-help">
                                 <div class="tooltip__text">Выберите базы, которые стоит исключить</div>
                               </div>
@@ -501,8 +509,10 @@
                       </div>
                       <textarea class="create__item-textarea textarea" placeholder="введите текст сообщения" name="messsage-textarea"></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                             <div class="button create__item-info-btn">сохранить как шаблон</div>
                       </div>
                     </div>
@@ -516,8 +526,10 @@
                           </label>
                       <textarea class="create__item-textarea create__item-textarea--transcription textarea" placeholder="введите текст сообщения" disabled name="transliteration-textarea" readonly></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -530,16 +542,20 @@
                     </div>
                     <div class="create__item-elem create__item-elem--sixth create__item-elem--column">
                       <div class="create__item-elem create__item-elem--row create__item-elem--margin">
-                        <div class="create__item-text">с</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">с</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                          </div>
                         </div>
-                        <div class="create__item-text">до</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">до</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                          </div>
                         </div>
                       </div>
-                      <div class="create__item-elem create__item-elem--row">
+                      <div class="create__item-elem create__item-elem--row create__item-elem--checkboxes">
                         <div class="create__item-elem create__item-elem--column">
                               <label class="checkbox create__item-checkbox">
                                 <input type="checkbox" name="mailing-setting-1" hidden>
@@ -643,7 +659,7 @@
                     <div class="create__item-data">
                       <div class="create__item-elem create__item-elem--eighth create__item-elem--column">
                         <div class="create__item-elem create__item-elem--row">
-                          <div class="create__item-title">Выбор получателей сообщения</div>
+                          <div class="create__item-title">Базы для исколючения рассылки</div>
                               <div class="tooltip icon-help">
                                 <div class="tooltip__text">Выберите базы, которые стоит исключить</div>
                               </div>
@@ -750,8 +766,10 @@
                       </div>
                       <textarea class="create__item-textarea textarea" placeholder="введите текст сообщения" name="messsage-textarea"></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                             <div class="button create__item-info-btn">сохранить как шаблон</div>
                       </div>
                     </div>
@@ -765,8 +783,10 @@
                           </label>
                       <textarea class="create__item-textarea create__item-textarea--transcription textarea" placeholder="введите текст сообщения" disabled name="transliteration-textarea" readonly></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -779,16 +799,20 @@
                     </div>
                     <div class="create__item-elem create__item-elem--sixth create__item-elem--column">
                       <div class="create__item-elem create__item-elem--row create__item-elem--margin">
-                        <div class="create__item-text">с</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">с</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                          </div>
                         </div>
-                        <div class="create__item-text">до</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">до</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                          </div>
                         </div>
                       </div>
-                      <div class="create__item-elem create__item-elem--row">
+                      <div class="create__item-elem create__item-elem--row create__item-elem--checkboxes">
                         <div class="create__item-elem create__item-elem--column">
                               <label class="checkbox create__item-checkbox">
                                 <input type="checkbox" name="mailing-setting-1" hidden>
@@ -892,7 +916,7 @@
                     <div class="create__item-data">
                       <div class="create__item-elem create__item-elem--eighth create__item-elem--column">
                         <div class="create__item-elem create__item-elem--row">
-                          <div class="create__item-title">Выбор получателей сообщения</div>
+                          <div class="create__item-title">Базы для исколючения рассылки</div>
                               <div class="tooltip icon-help">
                                 <div class="tooltip__text">Выберите базы, которые стоит исключить</div>
                               </div>
@@ -999,8 +1023,10 @@
                       </div>
                       <textarea class="create__item-textarea textarea" placeholder="введите текст сообщения" name="messsage-textarea"></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                             <div class="button create__item-info-btn">сохранить как шаблон</div>
                       </div>
                     </div>
@@ -1014,8 +1040,10 @@
                           </label>
                       <textarea class="create__item-textarea create__item-textarea--transcription textarea" placeholder="введите текст сообщения" disabled name="transliteration-textarea" readonly></textarea>
                       <div class="create__item-info">
-                        <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
-                        <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        <div class="create__item-info-row">
+                          <div class="create__item-info-symbols">Введено <span>0</span> символов</div>
+                          <div class="create__item-info-quantity">Итого: <span>2</span> sms</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1028,16 +1056,20 @@
                     </div>
                     <div class="create__item-elem create__item-elem--sixth create__item-elem--column">
                       <div class="create__item-elem create__item-elem--row create__item-elem--margin">
-                        <div class="create__item-text">с</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">с</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="from-date" id="from-date" placeholder="Начало">
+                          </div>
                         </div>
-                        <div class="create__item-text">до</div>
-                        <div class="create__item-date icon-calendar">
-                          <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                        <div class="create__item-elem create__item-elem--row">
+                          <div class="create__item-text">до</div>
+                          <div class="create__item-date icon-calendar">
+                            <input class="create__item-date-input input" type="text" name="to-date" id="to-date" placeholder="Окончание">
+                          </div>
                         </div>
                       </div>
-                      <div class="create__item-elem create__item-elem--row">
+                      <div class="create__item-elem create__item-elem--row create__item-elem--checkboxes">
                         <div class="create__item-elem create__item-elem--column">
                               <label class="checkbox create__item-checkbox">
                                 <input type="checkbox" name="mailing-setting-1" hidden>
@@ -1141,7 +1173,7 @@
                     <div class="create__item-data">
                       <div class="create__item-elem create__item-elem--eighth create__item-elem--column">
                         <div class="create__item-elem create__item-elem--row">
-                          <div class="create__item-title">Выбор получателей сообщения</div>
+                          <div class="create__item-title">Базы для исколючения рассылки</div>
                               <div class="tooltip icon-help">
                                 <div class="tooltip__text">Выберите базы, которые стоит исключить</div>
                               </div>

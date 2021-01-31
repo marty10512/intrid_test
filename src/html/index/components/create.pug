@@ -40,28 +40,32 @@ section.index__create
                                             li.create__item-dropdown-item= item
                             textarea.create__item-textarea.textarea(placeholder='введите текст сообщения', name='messsage-textarea')
                             .create__item-info
-                                .create__item-info-symbols Введено <span>0</span> символов
-                                .create__item-info-quantity Итого: <span>2</span> sms
+                                .create__item-info-row
+                                    .create__item-info-symbols Введено <span>0</span> символов
+                                    .create__item-info-quantity Итого: <span>2</span> sms
                                 +button('create__item-info-btn', 'сохранить как шаблон')
                         .create__item-elem.create__item-elem--fourth.create__item-elem--column
                             +checkbox('create__item-checkbox', 'Включить транскрипцию', 'checkbox-transcription', 'Запись смс латиницей', 'transliteration-checkbox')
                             textarea.create__item-textarea.create__item-textarea--transcription.textarea(placeholder='введите текст сообщения', disabled, name='transliteration-textarea', readonly)
                             .create__item-info
-                                .create__item-info-symbols Введено <span>0</span> символов
-                                .create__item-info-quantity Итого: <span>2</span> sms
+                                .create__item-info-row
+                                    .create__item-info-symbols Введено <span>0</span> символов
+                                    .create__item-info-quantity Итого: <span>2</span> sms
                     .create__item-data
                         .create__item-elem.create__item-elem--fifth.create__item-elem--row
                             .create__item-title Запланировать рассылку
                             +tooltip('create__item-tooltip', 'Выберите дату и время рассылки')
                         .create__item-elem.create__item-elem--sixth.create__item-elem--column
                             .create__item-elem.create__item-elem--row.create__item-elem--margin
-                                .create__item-text с
-                                .create__item-date.icon-calendar
-                                    input.create__item-date-input.input(type='text', name='from-date', id='from-date', placeholder='Начало')
-                                .create__item-text до
-                                .create__item-date.icon-calendar
-                                    input.create__item-date-input.input(type='text', name='to-date', id='to-date', placeholder='Окончание')
-                            .create__item-elem.create__item-elem--row
+                                .create__item-elem.create__item-elem--row
+                                    .create__item-text с
+                                    .create__item-date.icon-calendar
+                                        input.create__item-date-input.input(type='text', name='from-date', id='from-date', placeholder='Начало')
+                                .create__item-elem.create__item-elem--row
+                                    .create__item-text до
+                                    .create__item-date.icon-calendar
+                                        input.create__item-date-input.input(type='text', name='to-date', id='to-date', placeholder='Окончание')
+                            .create__item-elem.create__item-elem--row.create__item-elem--checkboxes
                                 .create__item-elem.create__item-elem--column
                                     +checkbox('create__item-checkbox', 'Использовать часовой пояс абонента', 'mailing-setting-1')
                                     +checkbox('create__item-checkbox', 'по МСК, GMT+4:00', 'mailing-setting-2')
@@ -103,7 +107,7 @@ section.index__create
                         .create__item-data
                             .create__item-elem.create__item-elem--eighth.create__item-elem--column
                                 .create__item-elem.create__item-elem--row
-                                    .create__item-title Выбор получателей сообщения
+                                    .create__item-title Базы для исколючения рассылки
                                     +tooltip('create__item-tooltip', 'Выберите базы, которые стоит исключить')
                                 .create__item-table
                                     table(cellspacing="0" cellpadding="0")

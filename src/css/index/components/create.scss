@@ -12,8 +12,21 @@
         font-family: $font_1;
         &:before{
           margin-right: 8px;
+          font-size: 16px;
+        }
+        @media (max-width: 580px) {
+          display: flex;
+          flex-direction: column;
+          white-space: normal;
+          text-align: center;
+          width: 25%;
+          height: 72px;
+          &:before{
+            margin: 0 auto  5px;
+          }
         }
       }
+
     }
 
 
@@ -28,16 +41,30 @@
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
       border-radius: 0px 7px 7px 7px;
       padding: 42px 17px 20px 29px;
-
+      @include tablet {
+       flex-direction: column;
+      }
 
       &-column{
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-between;
+        &--first{
+          margin-right: 10px;
+          @include tablet {
+            margin-right: 0;
+            margin-bottom: 37px;
+          }
+        }
 
         &--second{
           width: Min(499px, 100%);
+          margin-left: 10px;
+          @include tablet{
+            margin-left: 0px;
+            width: 100%;
+          }
         }
       }
 
@@ -57,11 +84,28 @@
         }
         &--first{
           margin-bottom: 5px;
+          @media (max-width: 1100px) {
+            flex-direction: column;
+            margin-bottom: 10px;
+          }
         }
         &--second{
           margin-bottom: 16px;
           .create__item-elem:first-child{
             margin-right: 5px;
+          }
+          .input{
+            width: 259px;
+          }
+          @media (max-width: 1100px) {
+            flex-direction: column;
+            .input{
+              width: 100%;
+            }
+            .create__item-elem:first-child{
+              margin-right: 0;
+              margin-bottom: 10px;
+            }
           }
         }
         &--third{
@@ -76,16 +120,44 @@
           padding: 20px 15px;
           .create__item-elem--margin{
             margin-bottom: 36px;
+            @media (max-width: 1100px) {
+              flex-direction: column;
+              .create__item{
+                &-elem{
+                  &:first-child{
+                    margin-bottom: 8px;
+                  }
+                }
+                &-text{
+                  width: 16px;
+                }
+                &-date{
+                  width: 100%;
+                  &-input{
+                    width: 100%;
+                    max-width: unset;
+                  }
+                }
+              }
+            }
           }
           .create__item-elem--column{
             &:last-child{
               margin-left: auto;
+              @media (max-width: 590px) {
+                margin-left: 0;
+              }
             }
           }
           .create__item-checkbox{
             font-size: 11px;
             line-height: 17px;
             margin-bottom: 4px;
+          }
+          .create__item-elem--checkboxes{
+            @media (max-width: 590px) {
+              flex-direction: column;
+            }
           }
         }
         &--seventh{
@@ -111,10 +183,20 @@
                 }
               }
             }
+            @include tablet{
+              position: relative;
+              &:after{
+                position: absolute;
+                content: '';
+                height: 1px;
+                width: 90%;
+                bottom: -30px;
+                background-color: #C0C0C0;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+            }
           }
-        }
-        .input{
-          width: 259px;
         }
       }
 
@@ -219,10 +301,12 @@
       }
 
       &-info{
-        height: 33px;
         display: flex;
         flex-direction: row;
         padding-left: 25px;
+        &-row{
+          display: flex;
+        }
         &-symbols{
           font-weight: 300;
           font-size: 13px;
@@ -241,8 +325,20 @@
           font-size: 9px;
           line-height: 14px;
           letter-spacing: .1em;
-          height: 33px;
           margin-left: auto;
+        }
+        @media (max-width: 550px) {
+          flex-wrap: wrap;
+          &-row{
+            width: 100%;
+            margin-bottom: 20px;
+          }
+          &-symbols{
+            margin-right: auto;
+          }
+          &-btn{
+            margin: 0 auto;
+          }
         }
       }
 
@@ -411,12 +507,31 @@
         &-abonents{
           margin-bottom: auto;
         }
+
+        @include tablet{
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 17px;
+          &-btn{
+            margin-right: 0;
+            margin-bottom: 26px;
+          }
+          &-info{
+            text-align: center;
+          }
+          &-abonents{
+            margin-bottom: 9px;
+          }
+        }
       }
 
       &-price{
         font-size: 13px;
         line-height: 13px;
         margin-bottom: 42px;
+        @include tablet{
+          text-align: center;
+        }
       }
 
       &-submit{
@@ -426,6 +541,9 @@
         letter-spacing: 0.1em;
         width: min-content;
         margin-left: auto;
+        @include tablet{
+          margin: 0 auto;
+        }
       }
     }
   }
