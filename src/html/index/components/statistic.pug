@@ -1,0 +1,95 @@
+- var statisticItem1 = {title:'Пробная рассылка', type:{icon:'icon-message', name: 'СМС'}, author:'Отправитель', message: {text:'#number#lastname#name# Пора на фитнес! Запишись и получи первое занятие бесплатно. Подробности по телефону: 39853. Сайт: fitnessruss.ru', info:'220 символов, 2 СМС'}, abonents:{ready:1, left:0}, base:{name:'Название базы', info:'(8000/2000)'}, exception:{name:'База для исколючения', info:'(500)'}, date:{local:'нет', main:'нет', duplicates:'да'},time:{from:'23.07.2020, 19:30',to:'24.07.2020, 9:30'}, alive:'72:00', status: {main:'Запланировано', total:100, ready:90, left: 10}, price:100}
+- var statisticItem2 = {title:'Пробная рассылка', type:{icon:'icon-viber', name: 'Viber'}, author:'Отправитель', message: {text:'#number#lastname#name# Пора на фитнес! Запишись и получи первое занятие бесплатно. Подробности по телефону: 39853. Сайт: fitnessruss.ru', info:'220 символов, 2 СМС'}, abonents:{ready:1, left:0}, base:{name:'Название базы', info:'(8000/2000)'}, exception:{name:'База для исколючения', info:'(500)'}, date:{local:'нет', main:'нет', duplicates:'да'},time:{from:'23.07.2020, 19:30',to:'24.07.2020, 9:30'}, alive:'72:00', status: {main:'В работе', total:100, ready:90, left: 10}, price:100}
+- var statisticItem3 = {title:'Пробная рассылка', type:{icon:'icon-vk', name: 'VK'}, author:'Отправитель', message: {text:'#number#lastname#name# Пора на фитнес! Запишись и получи первое занятие бесплатно. Подробности по телефону: 39853. Сайт: fitnessruss.ru', info:'220 символов, 2 СМС'}, abonents:{ready:1, left:0}, base:{name:'Название базы', info:'(8000/2000)'}, exception:{name:'База для исколючения', info:'(500)'}, date:{local:'нет', main:'нет', duplicates:'да'},time:{from:'23.07.2020, 19:30',to:'24.07.2020, 9:30'}, alive:'72:00', status: {main:'Готово', total:100, ready:90, left: 10}, price:100}
+- var statisticItem4 = {title:'Пробная рассылка', type:{icon:'icon-cascade', name: 'Каскадная'}, author:'Отправитель', message: {text:'#number#lastname#name# Пора на фитнес! Запишись и получи первое занятие бесплатно. Подробности по телефону: 39853. Сайт: fitnessruss.ru', info:'220 символов, 2 СМС'}, abonents:{ready:1, left:0}, base:{name:'Название базы', info:'(8000/2000)'}, exception:{name:'База для исколючения', info:'(500)'}, date:{local:'нет', main:'нет', duplicates:'да'},time:{from:'23.07.2020, 19:30',to:'24.07.2020, 9:30'}, alive:'72:00', status: {main:'Ожидает оплату', total:100, ready:90, left: 10}, price:100}
+- var tableStatistic = [statisticItem1, statisticItem2, statisticItem3, statisticItem4]
+- var blockStatistic = [statisticItem1, statisticItem2, statisticItem3]
+
+.index__statistic
+    .index__statistic-row
+        h1.index__statistic-title Статистика по рассылкам
+        .index__statistic-actions
+            .index__statistic-actions-item.index__statistic-actions-item--table.icon-rows.active
+            .index__statistic-actions-item.index__statistic-actions-item--block.icon-blocks
+    .index__statistic-content.index__statistic-content--table
+        table.index__statistic-table
+            thead
+                tr
+                    td Название рассылки
+                    td.index__statistic-table-type Тип
+                    td Отправитель
+                    td.index__statistic-table-sms Текст SMS
+                    td Абонентов готово | осталось
+                    td Название базы
+                    td База для исключения
+                    td Локальное время | Главная отправка | Дублирующие номера
+                    td Время отправки SMS
+                    td Срок жизни смс
+                    td Статус
+                    td Стоимость
+                    td.index__statistic-table-actions
+            tbody
+                each row, i in tableStatistic
+                    tr(class= i%2 === 0 ? 'index__statistic-table-color': '')
+                        td= row.title
+                        td.index__statistic-table-type
+                            .index__statistic-table-icon(class=row.type.icon)
+                        td= row.author
+                        td.index__statistic-table-sms= row.message.text
+                        td= row.abonents.left+' | '+row.abonents.ready
+                        td= row.base.name+' '+row.base.info
+                        td= row.exception.name + row.exception.info
+                        td= row.date.local+'|'+row.date.main+'|'+row.date.duplicates
+                        td= row.time.from+' - '+row.time.to
+                        td= row.alive
+                        td= row.status.main
+                        td= row.price+'₽'
+                        td.index__statistic-table-actions
+                            .index__statistic-table-btn.index__statistic-table-btn--refresh.icon-refresh
+                            .index__statistic-table-btn.index__statistic-table-btn--share.icon-share
+    .index__statistic-content.index__statistic-content--blocks
+        each block in blockStatistic
+            .index__statistic-item
+                .index__statistic-item-header
+                    .index__statistic-item-title= block.title
+                    .index__statistic-item-header-info
+                        .index__statistic-item-type= block.type.name
+                        .index__statistic-item-author= 'от '+block.author
+                .index__statistic-item-block
+                    .index__statistic-item-message= block.message.text
+                    .index__statistic-item-info= block.message.info
+                    .index__statistic-item-base= block.base.name
+                        span= block.base.info
+                    .index__statistic-item-exeption= block.exception.name
+                        span= block.exception.info
+                    .index__statistic-item-status
+                        span
+                            div.index__statistic-item-status-title Всего
+                            div.index__statistic-item-status-text= block.status.total
+                        span
+                            div.index__statistic-item-status-title Готово
+                            div.index__statistic-item-status-text= block.status.ready
+                        span
+                            div.index__statistic-item-status-title Осталось
+                            div.index__statistic-item-status-text= block.status.left
+
+                .index__statistic-item-time
+                    span= 'Отправка с '
+                    span.index__statistic-item-time-bold= block.time.from
+                    span=' до '
+                    span.index__statistic-item-time-bold= block.time.to
+                .index__statistic-item-block
+                    .index__statistic-item-row
+                        .index__statistic-date
+                            .index__statistic-item-date-info.index__statistic-item-date-info--local(class= block.date.local === 'да' ? 'icon-ok' : 'icon-cross') Локальное время
+                            .index__statistic-item-date-info.index__statistic-item-date-info--main(class= block.date.main === 'да' ? 'icon-ok' : 'icon-cross') Планровая отправка
+                            .index__statistic-item-date-info.index__statistic-item-date-info--duplicate(class= block.date.duplicates === 'да' ? 'icon-ok' : 'icon-cross') Дублирующие номера
+                        .index__statistic-item-column
+                            .index__statistic-item-alive= 'Срок жизни смс: '+block.alive
+                            .index__statistic-item-progress= block.status.main
+                .index__statistic-item-price Стоимость:
+                    span= +block.price+' руб.'
+                .index__statistic-item-block
+                    .index__statistic-item-actions
+                        .index__statistic-item-btn.index__statistic-item-btn--refresh.icon-refresh Повтор
+                        .index__statistic-item-btn.index__statistic-item-btn--share.icon-share Экспорт

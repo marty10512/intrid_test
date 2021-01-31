@@ -1,8 +1,10 @@
 .index{
   &__content{
     padding-top: 50px;
+    padding-bottom: 200px;
   }
 
   @import "components/notifications";
   @import "components/create";
+  @import "components/statistic";
 }

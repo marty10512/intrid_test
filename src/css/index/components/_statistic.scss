@@ -1,0 +1,305 @@
+&__statistic{
+  &-row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+  }
+
+  &-title{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &-actions{
+    display: flex;
+    margin: 19px 0 0 auto;
+    &-item{
+      font-size: 27px;
+      cursor: pointer;
+      color: #CECECE;
+      margin: auto 0;
+      &.active{
+        color: $color_Azure;
+      }
+      &--table{
+        font-size: 33px;
+        margin-right: 31px;
+      }
+      &--block{
+        font-size: 27px;
+      }
+    }
+  }
+
+  &-content{
+    &--table{
+      border-radius: 7px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      //margin-bottom: 5px;
+    }
+    &--blocks{
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &-table{
+    font-size: 10px;
+    background: white;
+    border-radius: 7px;
+    background-color: $color_Azure;
+    border-collapse: collapse;
+    tr{
+      text-align: center;
+      td{
+        padding: 5px;
+        border-right: 1px solid #E7E7E7;
+        &:last-child{
+          border-right: 0 none
+        }
+        &.index__statistic-table-sms{
+          text-align: start;
+          max-width: 243px;
+        }
+      }
+    }
+    thead{
+      color: white;
+    }
+    tbody{
+      tr{
+        background-color: white;
+        &.index__statistic-table-color{
+          background-color: #EEF1F7;
+        }
+      }
+    }
+
+    &-type{
+      width: 49px;
+    }
+    &-icon{
+      font-size: 16px;
+    }
+    &-actions{
+      width: 80px;
+    }
+    &-btn{
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      height: 22px;
+      width: 22px;
+      display: flex;
+      margin: 0 auto;
+      &:before{
+        margin: auto;
+      }
+      &--refresh{
+        background-color: #305BAF;
+        margin-bottom: 4px;
+      }
+      &--share{
+        background-color: #4FA452;
+      }
+    }
+  }
+
+  &-item{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    max-width: 370px;
+    margin: 0 10px;
+
+    @media (max-width: 1000px) {
+      &:nth-child(3){
+        display: none;
+      }
+    }
+    @include tablet{
+      max-width: 100%;
+      &:nth-child(2){
+        display: none;
+      }
+    }
+
+    &-header{
+      border-radius: 7px 7px 0 0;
+      background-color: $color_Azure;
+      color: white;
+      padding: 20px 20px 9px;
+      display: flex;
+      justify-content: space-between;
+      &-info{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: right;
+        letter-spacing: 0.1em;
+      }
+    }
+    &-block{
+      padding: 10px 20px;
+    }
+    &-title{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.1em;
+      text-decoration-line: underline;
+      height: min-content;
+      margin: auto 0;
+    }
+    &-message{
+      font-size: 13px;
+      line-height: 19px;
+      margin-bottom: 10px;
+    }
+    &-info{
+      font-weight: 300;
+      font-size: 13px;
+      color: $color_Azure;
+      text-decoration: underline;
+      margin-bottom: 16px;
+      width: 100%;
+      text-align: end;
+    }
+    &-base{
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 17px;
+      letter-spacing: 0.1em;
+      margin-bottom: 5px;
+      span{
+        font-weight: normal;
+        margin-left: 111px;
+      }
+    }
+    &-exeption{
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 17px;
+      letter-spacing: 0.1em;
+      margin-bottom: 5px;
+      span{
+        font-weight: normal;
+        margin-left: 63px;
+      }
+    }
+    &-status{
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      span{
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        border-right: 1px solid #6B6B6B;
+        &:last-child{
+          border-right: 0 none;
+        }
+      }
+      &-title{
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0.085em;
+      }
+      &-text{
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0.1em;
+      }
+    }
+    &-time{
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 17px;
+      padding: 12px 20px;
+      background-color: #EEF1F7;
+      width: 100%;
+      text-align: center;
+      &-bold{
+        font-weight: 500;
+      }
+    }
+    &-row{
+      display: flex;
+      flex-direction: row;
+      padding: 17px 0 9px;
+      justify-content: space-between;
+    }
+    &-date{
+      display: flex;
+      flex-direction: column;
+      &-info{
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0.1em;
+        font-family: $font_1;
+        &:before{
+          font-size: 9px;
+          margin-right: 8px;
+        }
+      }
+    }
+    &-column{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: end;
+    }
+    &-alive{
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 15px;
+    }
+    &-progress{
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 17px;
+    }
+    &-price{
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 17px;
+      padding: 12px 20px;
+      background-color: #EEF1F7;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-actions{
+      display: flex;
+      justify-content: space-between;
+    }
+    &-btn{
+      cursor: pointer;
+      font-family: $font_1;
+      font-size: 11px;
+      line-height: 17px;
+      color: white;
+      padding: 3px 11px;
+      border-radius: 4px;
+      &:before{
+        margin-right: 9px;
+        font-size: 15px;
+        line-height: 17px;
+      }
+      &--refresh{
+        background-color: #305BAF;
+      }
+      &--share{
+        background-color: #4FA452;
+      }
+    }
+  }
+}
