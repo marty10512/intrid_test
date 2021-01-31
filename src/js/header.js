@@ -26,4 +26,41 @@
 
    toggleResponsiveMenu(burgerBtn);
    toggleResponsiveMenu(closeMenuBtn);
+
+   //header mobile hide functional
+    let isScrolled = false;
+    const
+        staticHeight = 128,
+        breakpoint = 56,
+        header = document.querySelector('.header'),
+        checkScrolled = () => {
+            const scrolled = window.scrollY;
+            if (scrolled < breakpoint){
+                if(isScrolled){
+                    isScrolled = false;
+                    header.classList.remove('scrolled');
+                }
+                const newHeight = staticHeight - scrolled;
+                header.style.height = newHeight+'px';
+                header.style.marginBottom = staticHeight-newHeight+'px';
+            } else if (!isScrolled){
+                isScrolled = true;
+                header.style.height = '72px';
+                header.classList.add('scrolled');
+            }
+        };
+
+    if (document.documentElement.clientWidth<=1000){
+        window.addEventListener('scroll', checkScrolled);
+    }
+
+    window.addEventListener('resize', () => {
+        if (document.documentElement.clientWidth<=1000){
+            window.addEventListener('scroll', checkScrolled);
+        } else {
+            window.removeEventListener('scroll', checkScrolled);
+            header.removeAttribute('style');
+        }
+    })
+
 });

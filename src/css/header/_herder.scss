@@ -1,6 +1,20 @@
+header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 .header{
   display: flex;
   flex-direction: column;
+  position: relative;
+  &.scrolled{
+    .header__item--create{
+      display: block;
+    }
+  }
+  @include responsive{
+    height: 128px;
+  }
 
   &__row{
     position: relative;
@@ -11,11 +25,12 @@
     }
 
     &--first{
-      padding: 18px 0;
+      background-color: white;
+      padding: 18px 0 27px;
       height: 72px;
-      margin-bottom: 9px;
       @include responsive {
-        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-top: auto;
         .header__item{
           display: none;
         }
@@ -25,8 +40,11 @@
       height: 56px;
       background-color: $color_Azure;
       @include responsive {
-        order: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
+        z-index: 9;
       }
     }
 
@@ -43,6 +61,7 @@
       
       @include responsive {
         position: fixed;
+        top: 0;
         left: -100%;
         z-index: 99;
         background-color: $color_Azure;
@@ -167,6 +186,7 @@
         color: black;
       }
       &--create{
+        display: none;
         position: relative;
         height: 42px;
         width: 42px;
@@ -351,4 +371,5 @@
       }
     }
   }
+
 }

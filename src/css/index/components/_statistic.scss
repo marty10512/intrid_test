@@ -11,6 +11,10 @@
     line-height: 45px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    @media (max-width: 950px) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &-actions{
