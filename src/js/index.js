@@ -100,4 +100,15 @@
             aliveInputs.forEach(input => input.disabled = true);
         }
     })
+
+
+    //statistic functional
+        const
+            statisticSec = document.querySelector('.index__statistic'),
+            tableBtn = statisticSec.querySelector('.index__statistic-actions-item--table'),
+            blockBtn = statisticSec.querySelector('.index__statistic-actions-item--block');
+
+        tableBtn.addEventListener('click', () => statisticSec.classList.remove('blocks'));
+    blockBtn.addEventListener('click', () => statisticSec.classList.add('blocks'));
+
 });
